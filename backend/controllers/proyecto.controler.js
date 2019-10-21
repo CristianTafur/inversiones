@@ -2,7 +2,7 @@ const Proyecto = require("../models/proyecto");
 const proyectoCtrl = {};
 
 proyectoCtrl.getProyectos = async (req, res) => {
-  const proyectos = await Proyecto.findAll({
+  await Proyecto.findAll({
     where: {
       estado: true
     }
@@ -27,6 +27,21 @@ proyectoCtrl.createProyecto = async (req, res) => {
         error:
           "el json solo posee 'nombre','descripcion','monto','fecha','estado'" 
       });
+    });
+};
+proyectoCtrl.getProyecto = async (req, res) => {
+  const {id}=req.params;
+  await Proyecto.findAll({
+    where: {
+      id,
+      estado: true
+    }
+  })
+    .then(proyectos => {
+      res.json(proyectos);
+    })
+    .catch(err => {
+      res.status(500).json({ error: "el parametro debe ser de tipo entero"});
     });
 };
 proyectoCtrl.updateProyecto = async (req, res) => {
