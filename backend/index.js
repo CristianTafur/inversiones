@@ -1,7 +1,7 @@
 //dependecias necesarias
 
 const express = require('express'); 
-//const cors = require('cors'); 
+const cors = require('cors'); 
 const app = express(); 
 
 //dependencias de desarrollo
@@ -10,10 +10,8 @@ const morgan=require('morgan');
  
 // configuraciones
 
-app.set('port', process.env.PORT || 3000);
-/* 
-app.use(cors({origin: 'http://localhost:4200'},{origin:'http://localhost:4200/usuarios'},{origin:'http://localhost:4200/usuarios/facturas'}));
-*/
+app.set('port', process.env.PORT || 3000); 
+app.use(cors({origin: 'http://localhost:4200'},{origin:'http://localhost:4200/add-proyecto'},{origin:'http://localhost:4200/list-proyecto'},{origin:'http://localhost:4200/edit-proyecto'})); 
 app.use(express.json()); 
 
 app.use(morgan('dev'));
