@@ -1,0 +1,23 @@
+<div class="container">
+    <br>
+    <h4 style="margin-left:20px" class="tittle mb-6">Mis Proyectos</h4>
+    <hr>
+    <div class="form-row">
+        
+           
+                <div class="m-3 card"  *ngFor="let proyecto of proyectos" style="width: 18rem; box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);">
+                    <img src="https://www.preview.ph/preview-2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{proyecto.nombre}}</h5>
+                        <p class="card-text">{{proyecto.descripcion}}</p>
+                        <a (click)="Editar(proyecto)" class="btn btn-warning">Editar</a>
+                        <a (click)="Eliminar(proyecto)" class="btn btn-danger" style="margin-left: 20px;">Eliminar</a>
+                    </div>
+                </div>
+            
+        
+        
+
+    </div>
+</div>
+
