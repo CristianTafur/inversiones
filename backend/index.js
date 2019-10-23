@@ -23,5 +23,5 @@ app.use('/inversiones', require('./routes/inversiones.routes'));
 //inicar el servidor 
 
 app.listen(app.get('port'), () => {
-    console.log(`http://localhost:${app.get('port')}/inversiones/proyectos`);
+    console.log(`http://localhost:${app.get('port')}/inversiones/proyecto`);
 });

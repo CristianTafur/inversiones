@@ -22,8 +22,5 @@ const Proyecto= sequelize.define('proyecto',{
     estado:{
         type:Sequelize.BOOLEAN
     }
-
-},{
-    timestamp:false
 });
 module.exports=Proyecto; 

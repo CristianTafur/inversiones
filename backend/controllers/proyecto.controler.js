@@ -15,7 +15,8 @@ proyectoCtrl.getProyectos = async (req, res) => {
     });
 };
 proyectoCtrl.createProyecto = async (req, res) => {
-  var proyecto = req.body;
+  var proyecto = req.body; 
+  proyecto.estado=true;
   proyecto = await Proyecto.create(proyecto, {
     fields: ["nombre", "descripcion", "monto", "fecha", "estado"]
   })
